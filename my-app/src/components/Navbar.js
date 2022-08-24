@@ -1,5 +1,6 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import CartWidget from './CartWidget';
 
 function Navbar() {
     return (
@@ -10,6 +11,9 @@ function Navbar() {
               <a className="link-light" link="#">Productos</a>
               <a className="link-light" link="#">Servicios</a>
               <a className="link-light" link="#">Nosotros</a>
+            </div>
+            <div>
+            <CartWidget/>
             </div>
           </nav>
         </div></>
