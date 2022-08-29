@@ -9,7 +9,6 @@ function App() {
     <Navbar />
     <ItemListContainer/>
 
-    <h2>Las ofertas de la semana</h2>
 
     </div>
   );

@@ -1,9 +1,14 @@
-const ItemListContainer = ({props}) => { 
-    let contenido = props.contenido
+import ItemCount from "./ItemCount";
+
+const ItemListContainer = (props) => { 
+    const onAdd =(valor) => {
+        (console.log(`Compraste ${valor} unidades`))
+    }
     return (
         <div>
-        <h1>Catalogo del Producto</h1>
-        {contenido}
+        <h1>{props.greeting}</h1>
+
+        <ItemCount initial={1} stock={10} onAdd={onAdd}/>
         </div>
     )
 }
