@@ -1,4 +1,5 @@
 import './App.css';
+import ItemListContainer from './components/itemListContainer';
 import Navbar from './components/Navbar';
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <div className="App">
 
     <Navbar />
+    <ItemListContainer/>
 
     <h2>Las ofertas de la semana</h2>
 
