@@ -1,12 +1,29 @@
 
-import Item from "./Item"
+import { useEffect, useState } from "react";
+import Item from "./Item";
 
-const ItemList = ({productos}) => {
-  productos.map(() => {
+
+const ItemList = () => {
+    const [funkos, setFunkos] = useState([])
+
+    useEffect(() => {
+        fetch('https://api.mercadolibre.com/sites/MLA/search?q=Funkos')
+            .then(resp => resp.json())
+            .then(data => { setFunkos(data.results); }
+            )
+
+    }, [])
+
     return (
-      <Item title={productos.title} thumbnail={productos.thumbnail} order_backend={productos.order_backend} permalink={productos.permalink} />
+        <>
+            {funkos.map((funkos, index) => {
+                return (
+                    <Item key={index} img={funkos.thumbnail} title={funkos.title} price={funkos.price} />
+                )
+            })}
+        </>
     )
-  }
-    )}
+}
+
 
 export default ItemList;

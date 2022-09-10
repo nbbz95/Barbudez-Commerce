@@ -17,7 +17,7 @@ const ItemDetailContainer = (props) => {
             useEffect(() =>  {
                     setTimeout(() => {
                         ItemDetailPromise();
-            }, 2000);
+            },2000);
             }, []);
 
             return (

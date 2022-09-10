@@ -1,17 +1,20 @@
-import 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Card, Col, Row } from 'react-bootstrap'
+import ItemCount from './ItemCount'
 
+const Item = ({img, title, price}) => {
+  const onAdd = () => {
+      console.log('Ud. ha añadido un producto al carrito')
+  }
+  return (
 
-function Item({title, thumbnail, order_backend, permalink}){
-  return(
-    <div className="card" key={order_backend}>
-    <div className="container">
-        <h4><b>{title}</b></h4>
-        <img src={thumbnail} alt={title} />
-        <p>{permalink}</p>
-        <button>agregar producto</button>
-    </div>
-  </div>
- );
+    <div style={{ border: '1px solid black', borderRadius: 5, margin: 10, padding: 5, width: 250, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <img src={img} alt="" style={{ width: '50%', height: '50%' }} />
+    <h6>{title}</h6>
+    <h4>${price}</h4>
+    <ItemCount stock={10} initial={1} onAdd={onAdd} />
+</div>
+)
+  
 }
-export default Item;
+
+export default Item
