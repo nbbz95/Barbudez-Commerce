@@ -4,7 +4,11 @@ const ItemListContainer = () => {
 
     return (
         <>
-            <ItemList/>
+
+            <div>
+                <ItemList/>
+            </div>
+
         </>
     )
 }

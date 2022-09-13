@@ -17,6 +17,7 @@ const ItemList = () => {
 
     }, [idCategory])
 
+
     return (
         <>
             {funkos.map((funkos, index) => {
@@ -28,6 +29,7 @@ const ItemList = () => {
                     price={funkos.price}
                     category={funkos.category_id}
                     id={funkos.site_id}/>
+            
                 )
             })}
         </>

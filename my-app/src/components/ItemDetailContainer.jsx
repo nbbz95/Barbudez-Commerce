@@ -9,8 +9,7 @@ const ItemDetailContainer = (props) => {
             const { idDetail } = useParams ()
  
             const ItemDetailPromise = async () => {
-                
-                
+
                     const response = await fetch('https://api.mercadolibre.com/sites/MLA/search?q=Funkos')
                     const data = await response.json();
                     setProductos (data.results[0]);
@@ -21,8 +20,7 @@ const ItemDetailContainer = (props) => {
                         ItemDetailPromise();
             },2000);
             }, [idDetail]);
-
-            return (
+          return (
 
                 <div>
                     <ItemDetail items={productos} />
