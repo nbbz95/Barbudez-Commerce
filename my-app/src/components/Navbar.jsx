@@ -9,9 +9,8 @@ function Navbar() {
       <div className="container">
           <nav className="navbar navbar-expand-lg bg-dark">
             <div className="container-fluid">
-            <Link to={`/`}>Inicio</Link>
-            <Link to={`/`}>Productos</Link>
-            <Link to={`/item/:id`}>Figuras</Link>
+            <Link to="/">Inicio</Link>
+            <Link to="/category">Categorias</Link>
               <CartWidget/>
             </div>
           </nav>

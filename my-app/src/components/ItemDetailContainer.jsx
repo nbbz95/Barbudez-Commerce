@@ -3,10 +3,10 @@ import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";
 
 
-const ItemDetailContainer = (props) => {
+const ItemDetailContainer = () => {
 
-            const [productos, setProductos] = useState([]);
-            const { idDetail } = useParams ()
+            const [producto, setProductos] = useState([]);
+            const { productId } = useParams()
  
             const ItemDetailPromise = async () => {
 
@@ -19,11 +19,11 @@ const ItemDetailContainer = (props) => {
                     setTimeout(() => {
                         ItemDetailPromise();
             },2000);
-            }, [idDetail]);
+            }, [productId]);
           return (
 
                 <div>
-                    <ItemDetail items={productos} />
+                    <ItemDetail items={producto} />
                 </div>
             )
 
