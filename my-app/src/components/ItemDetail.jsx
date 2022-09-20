@@ -2,7 +2,7 @@
 import { useState } from "react";
 import ItemCount from "./ItemCount";
 
-const ItemDetail = ({ items }) => {
+const ItemDetail = ({ product }) => {
     const [add, setAdd] = useState(false)
     const onAdd = () => {
         setAdd(!add)
@@ -10,12 +10,13 @@ const ItemDetail = ({ items }) => {
 
     return (
     <>
-        <div>
-            <img src={items.thumbnail} />
-            <h5>{items.title} </h5>
-            <h6> {items.id}</h6>
-            <p>${items.price}</p>
-        </div>
+        <div style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
+            <img src={product.imagen} style={{width:'500px'}}/>
+            <h5>{product.nombre} </h5>
+            <p>Categoria: {product.descripcion}</p>
+            <p>Descuento:{product.descuento}</p>
+            <p>Stock: {product.stock}</p>
+        
 
         <div>
             {
@@ -24,6 +25,7 @@ const ItemDetail = ({ items }) => {
                 :
                  <ItemCount stock={10} initial={1} onAdd={onAdd} />
             }
+        </div>
         </div>
             </>
     )

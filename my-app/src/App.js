@@ -8,15 +8,19 @@ import Error404 from './components/Error404';
 function App() {
   return (
   <>
-      <BrowserRouter>
-        <Navbar/>
-          <Routes>
-              <Route exact path="/" element={<ItemListContainer greeting={'Home'}/>}/>
-              <Route path="/category/:categoryId" element={<ItemListContainer />} />
-              <Route path="/detail/:productId" element={<ItemDetailContainer />} />
-              <Route  path="*" element={<Error404/>}/>
-          </Routes>
-      </BrowserRouter>
+       <BrowserRouter>
+    <Navbar />
+
+    <Routes>
+
+      <Route path="/" element={<ItemListContainer greeting={'HOME'}/>}/>
+      <Route path="/descripcion/:idcategoria" element={<ItemListContainer/>}/>
+      <Route path="/item/:id" element={<ItemDetailContainer />}/>
+      <Route  path="*" element={<Error404/>}/>
+
+    </Routes>
+
+  </BrowserRouter>
   </>
   );
 }

@@ -2,24 +2,13 @@
 import Item from "./Item";
 
 
-const ItemList = ({productos}) => {
-
-
+export const ItemList = ({ items }) => {
     return (
-        <>
-            {productos.map((productos, index) => {
-                return (
-                    <Item
-                    key={index}
-                    id={productos.id}
-                    img={productos.thumbnail}
-                    title={productos.title}
-                    price={productos.price}/>
-                )
-            })}
-        </>
-    )
-}
-
-
-export default ItemList;
+        <section style={{display:'flex', flexDirection:'row', flexWrap:'wrap', justifyContent:'center', alignItems:'stretch' }}> {items?.map((item) => (
+           <Item  product={item}  key={item.id} />
+         ))}
+       </section>
+    );
+  }
+  
+  export default ItemList;
