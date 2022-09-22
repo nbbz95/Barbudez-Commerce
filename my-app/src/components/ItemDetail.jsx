@@ -1,13 +1,11 @@
 /* eslint-disable jsx-a11y/alt-text */
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { CartContext } from "../contexts/CartContext";
 import ItemCount from "./ItemCount";
 
-const ItemDetail = ({ product }) => {
+const ItemDetail = ({ product, item }) => {
     const [add, setAdd] = useState(false)
-    const onAdd = () => {
-        setAdd(!add)
-    }
-
+    const { addItem } = useContext(CartContext)
     return (
     <>
         <div style={{display:'flex', flexDirection:'column', alignItems:'center'}}>
@@ -23,7 +21,7 @@ const ItemDetail = ({ product }) => {
                 add ?
                 ""
                 :
-                 <ItemCount stock={10} initial={1} onAdd={onAdd} />
+                 <ItemCount item={item} stock={10} initial={1} addItem={addItem} />
             }
         </div>
         </div>

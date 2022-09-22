@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react';
 
-const ItemCount = ({initial, stock, onAdd}) => {
+const ItemCount = ({initial, stock, addItem, items}) => {
     const [count, setCount] = useState(initial);
     const restProduct = () => {
         setCount (count - 1);
@@ -19,7 +19,7 @@ const ItemCount = ({initial, stock, onAdd}) => {
                 <button type="button" className="btn btn-dark" disabled={count >= stock} onClick={sumProduct}>+</button>
                 </div>
                 <div className='d-flex justify-content-center'>
-                    <button type="button" className="btn btn-dark" disabled={count >= stock} onClick= {() => onAdd(count)}>Agregar al carrito</button>
+                    <button type="button" className="btn btn-dark" disabled={count >= stock} onClick= {() => addItem({items})}>Agregar al carrito</button>
                 </div>
                 </div>
             )
